@@ -10,13 +10,9 @@
 		<div id="message"> What sound does this character make? </div>
 
 		<input type="text" id="userAnswer"/>
-		<button onclick="checkAnswer()">Submit</button>
-		<button onclick="game()">Next</button>
+		<button onclick="checkAnswer(romaji[index])">Submit</button>
+		<button onclick="index = Math.floor(Math.random() * codes.length); nextHiragana(codes[index])">Next</button>
 
-		<input type="file" id="file-input" src="data/hiragana_codes.txt"/>
-		<h3>Contents of the file:</h3>
-		<pre id="file-content"></pre>
-
-		<script src="scripts/main2.js"></script>
+		<script src="scripts/main.js"></script>
 	</body>
 </html>
