@@ -1,6 +1,7 @@
 function nextHiragana(code)
 {
 	document.getElementById('message').innerHTML = "What sound does this character make?";
+	document.getElementById('userAnswer').value = "";
 	ctx.clearRect(0, 0, canv.width, canv.height);
 	ctx.strokeRect(0, 0, canv.width, canv.height);
 	ctx.font = "80px Times";
@@ -24,6 +25,11 @@ function checkAnswer(actualAnswer)
 		document.getElementById('message').innerHTML = "Correct!"
 	else
 		document.getElementById('message').innerHTML = "Try again!"
+}
+
+function showAnswer(actualAnswer)
+{
+	document.getElementById('message').innerHTML = "Answer: " + actualAnswer;
 }
 
 function readTextFile(file)
