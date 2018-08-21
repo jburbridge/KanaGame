@@ -4,7 +4,17 @@ function nextHiragana(code)
 	ctx.clearRect(0, 0, canv.width, canv.height);
 	ctx.strokeRect(0, 0, canv.width, canv.height);
 	ctx.font = "80px Times";
-	ctx.fillText(String.fromCharCode(parseInt(code, 16)), 10, 80);
+
+	//If it's a monograph
+	if(code.length < 4)
+		ctx.fillText(String.fromCharCode(parseInt(code, 16)), 10, 80);
+
+	//Else, it's a digraph, so split the two codes apart and print each
+	else
+	{
+		ctx.fillText(String.fromCharCode(parseInt(code.substring(0, 4), 16)), 10, 80);
+		ctx.fillText(String.fromCharCode(parseInt(code.substring(5, 9), 16)), 80, 80);
+	}
 }
 
 function checkAnswer(actualAnswer)
@@ -31,10 +41,19 @@ function readTextFile(file)
             {
                 var allText = rawFile.responseText;
                 splitText = allText.split(/ |\r\n/);
-				for(var i = 0; i < splitText.length; i+=2)
+
+				//71 monographs
+				for(var i = 0; i < 142; i+=2)
 				{
 					codes.push(splitText[i]);
 					romaji.push(splitText[i+1]);
+				}
+
+				//36 digraphs
+				for(var i = 142; i < 250; i+=3)
+				{
+					codes.push(splitText[i] + '-' + splitText[i+1]);
+					romaji.push(splitText[i+2]);
 				}
             }
         }
