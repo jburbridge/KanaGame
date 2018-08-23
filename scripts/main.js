@@ -97,3 +97,22 @@ ctx=canv.getContext("2d");
 
 var index = Math.floor(Math.random() * codes.length);
 nextKana(codes[index])
+
+//If user hits enter, check answer. If space, go to next kana.
+var input = document.getElementById("userAnswer");
+input.addEventListener("keydown", function(event) {
+	if(event.which === 13)
+		checkAnswer(romaji[index]);
+
+	else if(event.which === 32)
+	{
+		index = Math.floor(Math.random() * codes.length);
+		nextKana(codes[index]);
+	}
+});
+
+//Sloppy way of clearing input buffer
+input.addEventListener("keyup", function(event) {
+	if(event.which === 32)
+		this.value = "";
+});
