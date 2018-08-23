@@ -1,4 +1,4 @@
-function nextHiragana(code)
+function nextKana(code)
 {
 	document.getElementById('message').innerHTML = "What sound does this character make?";
 	document.getElementById('userAnswer').value = "";
@@ -37,6 +37,9 @@ function readTextFile(file)
 	var codes = [];
 	var romaji = [];
 
+	var learnHiragana = true;
+	var learnKatakana = true;
+
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", file, false);
     rawFile.onreadystatechange = function ()
@@ -48,18 +51,31 @@ function readTextFile(file)
                 var allText = rawFile.responseText;
                 splitText = allText.split(/ |\r\n/);
 
-				//71 monographs
-				for(var i = 0; i < 142; i+=2)
+				if(learnHiragana)
 				{
-					codes.push(splitText[i]);
-					romaji.push(splitText[i+1]);
+					//71 hiragana monographs
+					for(var i = 0; i < 142; i+=2)
+					{
+						codes.push(splitText[i]);
+						romaji.push(splitText[i+1]);
+					}
+
+					//36 hiragana digraphs
+					for(var i = 142; i < 250; i+=3)
+					{
+						codes.push(splitText[i] + '-' + splitText[i+1]);
+						romaji.push(splitText[i+2]);
+					}
 				}
 
-				//36 digraphs
-				for(var i = 142; i < 250; i+=3)
+				if(learnKatakana)
 				{
-					codes.push(splitText[i] + '-' + splitText[i+1]);
-					romaji.push(splitText[i+2]);
+					//71 katakana monographs
+					for(var i = 250; i < 392; i+=2)
+					{
+						codes.push(splitText[i]);
+						romaji.push(splitText[i+1]);
+					}
 				}
             }
         }
@@ -72,7 +88,7 @@ function readTextFile(file)
 var codes = [];
 var romaji = [];
 
-var output = readTextFile("data/hiragana_codes.txt");
+var output = readTextFile("../data/kana_codes.txt");
 codes = output[0];
 romaji = output[1];
 
@@ -80,4 +96,4 @@ canv=document.getElementById("gc");
 ctx=canv.getContext("2d");
 
 var index = Math.floor(Math.random() * codes.length);
-nextHiragana(codes[index])
+nextKana(codes[index])

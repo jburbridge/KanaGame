@@ -1,0 +1,178 @@
+3042 a
+3044 i
+3046 u
+3048 e
+304A o
+304B ka
+304C ga
+304D ki
+304E gi
+304F ku
+3050 gu
+3051 ke
+3052 ge
+3053 ko
+3054 go
+3055 sa
+3056 za
+3057 shi
+3058 ji
+3059 su
+305A zu
+305B se
+305C ze
+305D so
+305E zo
+305F ta
+3060 da
+3061 chi
+3062 ji
+3064 tsu
+3065 zu
+3066 te
+3067 de
+3068 to
+3069 do
+306A na
+306B ni
+306C nu
+306D ne
+306E no
+306F ha
+3070 ba
+3071 pa
+3072 hi
+3073 bi
+3074 pi
+3075 fu
+3076 bu
+3077 pu
+3078 he
+3079 be
+307A pe
+307B ho
+307C bo
+307D po
+307E ma
+307F mi
+3080 mu
+3081 me
+3082 mo
+3084 ya
+3086 yu
+3088 yo
+3089 ra
+308A ri
+308B ru
+308C re
+308D ro
+308F wa
+3092 o
+3093 n
+304D 3083 kya
+304D 3085 kyu
+304D 3087 kyo
+3057 3083 sha
+3057 3085 shu
+3057 3087 sho
+3061 3083 cha
+3061 3085 chu
+3061 3087 cho
+306B 3083 nya
+306B 3085 nyu
+306B 3087 nyo
+3072 3083 hya
+3072 3085 hyu
+3072 3087 hyo
+307F 3083 mya
+307F 3085 myu
+307F 3087 myo
+308A 3083 rya
+308A 3085 ryu
+308A 3087 ryo
+304E 3083 gya
+304E 3085 gyu
+304E 3087 gyo
+3058 3083 ja
+3058 3085 ju
+3058 3087 jo
+3062 3083 ja
+3062 3085 ju
+3062 3087 jo
+3073 3083 bya
+3073 3085 byu
+3073 3087 byo
+3074 3083 pya
+3074 3085 pyu
+3074 3087 pyo
+30A2 a
+30A4 i
+30A6 u
+30A8 e
+30AA o
+30AB ka
+30AC ga
+30AD ki
+30AE gi
+30AF ku
+30B0 gu
+30B1 ke
+30B2 ge
+30B3 ko
+30B4 go
+30B5 sa
+30B6 za
+30B7 shi
+30B8 ji
+30B9 su
+30BA zu
+30BB se
+30BC ze
+30BD so
+30BE zo
+30BF ta
+30C0 da
+30C1 chi
+30C2 ji
+30C4 tsu
+30C5 zu
+30C6 te
+30C7 de
+30C8 to
+30C9 do
+30CA na
+30CB ni
+30CC nu
+30CD ne
+30CE no
+30CF ha
+30D0 ba
+30D1 pa
+30D2 hi
+30D3 bi
+30D4 pi
+30D5 fu
+30D6 bu
+30D7 pu
+30D8 he
+30D9 be
+30DA pe
+30DB ho
+30DC bo
+30DD po
+30DE ma
+30DF mi
+30E0 mu
+30E1 me
+30E2 mo
+30E4 ya
+30E6 yu
+30E8 yo
+30E9 ra
+30EA ri
+30EB ru
+30EC re
+30ED ro
+30EF wa
+30F2 o
+30F3 n

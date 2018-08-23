@@ -1,0 +1,19 @@
+<html>
+	<header>
+		<title>Kana Game</title>
+		<meta charset="utf-8"/>
+		<h1>Kana Game</h1>
+	</header>
+
+	<body>
+		<canvas id="gc" width="180" height="100"></canvas><br><br>
+		<div id="message"> What sound does this character make? </div>
+
+		<input type="text" id="userAnswer"/>
+		<button onclick="checkAnswer(romaji[index])">Submit</button>
+		<button onclick="showAnswer(romaji[index])">Show answer</button>
+		<button onclick="index = Math.floor(Math.random() * codes.length); nextKana(codes[index])">Next</button>
+
+		<script src="../scripts/main.js"></script>
+	</body>
+</html>
