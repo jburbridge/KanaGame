@@ -1,13 +1,28 @@
 <html>
+	<head>
+		<link href="styles/main.css" rel="stylesheet" type="text/css"/>
+	</head>
+
 	<header>
 		<title>Kana Game</title>
 		<meta charset="utf-8"/>
-		<h1>Kana Game</h1>
 	</header>
 
 	<body>
-		Welcome to the Kana game! We'll be practing both Hiragana and Katakana. <br>
-		Click the button below to get started. <br> <br>
-		<input type="button" value="Let's go!" onclick="window.location.href = 'pages/game.html'" />
+		<div class="element">
+			<div class = "game">
+				<h1>Learn Hiragana and Katakana</h1>
+				<div id="kana"></div>
+				<div id="message"> What sound does this character make?</div>
+
+				<input type="text" id="userAnswer"/> <br><br>
+
+				'Enter' to submit an answer <br>
+				'Shift' to show the correct answer <br>
+				'Space' to go to the next kana <br>
+			</div>
+		</div>
+
+		<script src="scripts/main.js"></script>
 	</body>
 </html>

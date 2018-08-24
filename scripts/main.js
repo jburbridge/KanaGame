@@ -2,29 +2,41 @@ function nextKana(code)
 {
 	document.getElementById('message').innerHTML = "What sound does this character make?";
 	document.getElementById('userAnswer').value = "";
-	ctx.clearRect(0, 0, canv.width, canv.height);
-	ctx.strokeRect(0, 0, canv.width, canv.height);
-	ctx.font = "80px Times";
+	var kana = document.getElementById("kana");
 
 	//If it's a monograph
-	if(code.length < 4)
-		ctx.fillText(String.fromCharCode(parseInt(code, 16)), 10, 80);
+	if(code.length < 5)
+		kana.innerHTML = String.fromCharCode(parseInt(code, 16));
 
 	//Else, it's a digraph, so split the two codes apart and print each
 	else
 	{
-		ctx.fillText(String.fromCharCode(parseInt(code.substring(0, 4), 16)), 10, 80);
-		ctx.fillText(String.fromCharCode(parseInt(code.substring(5, 9), 16)), 80, 80);
+		var kana1 = String.fromCharCode(parseInt(code.substring(0, 4), 16));
+		var kana2 = String.fromCharCode(parseInt(code.substring(5, 9), 16))
+		kana.innerHTML = kana1 + kana2;
 	}
 }
 
 function checkAnswer(actualAnswer)
 {
-	var userAnswer = document.getElementById('userAnswer').value;
-	if(userAnswer == actualAnswer)
-		document.getElementById('message').innerHTML = "Correct!"
+	var userAnswer = document.getElementById('userAnswer');
+	var message = document.getElementById('message');
+
+	//If they submitted a blank answer, don't respond
+	if(userAnswer.value.length === 0)
+		return;
+
+	//Right answer
+	else if (userAnswer.value == actualAnswer)
+	 	message.innerHTML = "Correct! It's " + actualAnswer + "!";
+
+	//Wrong answer
 	else
-		document.getElementById('message').innerHTML = "Try again!"
+	{
+	 	message.innerHTML = "Nope, it's not " + userAnswer.value + ".";
+
+	}
+	userAnswer.value = "";
 }
 
 function showAnswer(actualAnswer)
@@ -88,22 +100,26 @@ function readTextFile(file)
 var codes = [];
 var romaji = [];
 
-var output = readTextFile("../data/kana_codes.txt");
+var output = readTextFile("data/kana_codes.txt");
 codes = output[0];
 romaji = output[1];
-
-canv=document.getElementById("gc");
-ctx=canv.getContext("2d");
 
 var index = Math.floor(Math.random() * codes.length);
 nextKana(codes[index])
 
-//If user hits enter, check answer. If space, go to next kana.
 var input = document.getElementById("userAnswer");
+document.getElementById("userAnswer").focus();
 input.addEventListener("keydown", function(event) {
+
+	//Enter: submit answer
 	if(event.which === 13)
 		checkAnswer(romaji[index]);
 
+	//Shift: show answer
+	else if(event.which === 16)
+		showAnswer(romaji[index]);
+
+	//Space next kana
 	else if(event.which === 32)
 	{
 		index = Math.floor(Math.random() * codes.length);

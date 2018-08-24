@@ -1,0 +1,29 @@
+body{
+    background: #FFFFFF;
+    font-family: times;
+    color: #000000;
+    text-align: center;
+}
+
+header{
+    font-family: helvetica;
+}
+
+.element{
+    margin: auto;
+    resize: both;
+    height: 600px;
+    width: 600px;
+    border-radius: 50%;
+    background-color: #FF3737;
+    color: #FFFFFF;
+}
+
+.game{
+    padding-top: 26%;
+    font-size: 18;
+}
+
+#kana{
+    font-size: 80;
+}
