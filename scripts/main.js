@@ -103,17 +103,17 @@ document.getElementById("userAnswer").focus();
 input.addEventListener("keydown", function(event) {
 
 	//Enter: submit answer
-	if(event.which === 13) {
+	if(event.key === "Enter") {
 		checkAnswer(romaji[index]);
 	}
 
 	//Shift: show answer
-	else if(event.which === 16) {
+	else if(event.key === "Shift") {
 		showAnswer(romaji[index]);
 	}
 
-	//Space next kana
-	else if(event.which === 32) {
+	//Space: next kana
+	else if(event.key === " ") {
 		index = Math.floor(Math.random() * codes.length);
 		nextKana(codes[index]);
 	}
@@ -121,7 +121,7 @@ input.addEventListener("keydown", function(event) {
 
 //Sloppy way of clearing input buffer
 input.addEventListener("keyup", function(event) {
-	if(event.which === 32) {
+	if(event.key === " ") {
 		this.value = "";
 	}
 });
